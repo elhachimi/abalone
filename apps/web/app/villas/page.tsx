@@ -136,6 +136,8 @@ export default function Villas() {
     if (listingType === "rent" || listingType === "all") {
       if (
         villa.price_rent &&
+        priceRange[0] &&
+        priceRange[1] &&
         (villa.price_rent < priceRange[0] || villa.price_rent > priceRange[1])
       )
         return false;

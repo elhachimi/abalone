@@ -39,7 +39,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { format } from "date-fns";
 import { toast } from "sonner";
 
-const amenityIcons = {
+const amenityIcons: Record<string, React.ElementType> = {
   WiFi: Wifi,
   Parking: Car,
   Pool: Waves,
@@ -64,6 +64,10 @@ type Villa = {
   price_rent: number;
   price_sale: number;
   max_guests: number;
+  features: string[];
+  amenities: string[];
+  building_size: number;
+  status: string;
 };
 const villa: Villa = {
   id: "1",
@@ -82,14 +86,18 @@ const villa: Villa = {
   price_rent: 350,
   price_sale: 0,
   max_guests: 6,
+  features: [],
+  amenities: ["Wifi"],
+  building_size: 250,
+  status: "available",
 };
 export default function VillaDetail() {
   const urlParams = new URLSearchParams(window.location.search);
   const villaId = urlParams.get("id");
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [checkIn, setCheckIn] = useState(null);
-  const [checkOut, setCheckOut] = useState(null);
+  const [checkIn, setCheckIn] = useState<Date>();
+  const [checkOut, setCheckOut] = useState<Date>();
   const [inquiryForm, setInquiryForm] = useState({
     name: "",
     email: "",
@@ -117,8 +125,8 @@ export default function VillaDetail() {
   //  },
   //});
 
-  const handleSubmitInquiry = (e) => {
-    e.preventDefault();
+  const handleSubmitInquiry = () => {
+    //e.preventDefault();
     //createInquiry.mutate({
     //  ...inquiryForm,
     //  villa_id: villaId,
