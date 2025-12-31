@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import VillaCard from "@/components/common/VillaCard";
+import { useSearchParams } from "next/navigation";
 
 type Villa = {
   id: string;
@@ -94,7 +95,7 @@ const villas: Villa[] = [
   },
 ];
 export default function Villas() {
-  const urlParams = new URLSearchParams(window.location.search);
+  const urlParams = useSearchParams();
   const initialType = urlParams.get("type") || "all";
 
   const [listingType, setListingType] = useState(initialType);
