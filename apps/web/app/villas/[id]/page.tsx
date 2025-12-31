@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Badge } from "@workspace/ui/components/badge";
-import { Calendar } from "@workspace/ui/components/calendar";
+//import { Calendar } from "@workspace/ui/components/calendar";
 import { Textarea } from "@workspace/ui/components/textarea";
 import { Button } from "@workspace/ui/components/button";
 import { Input } from "@workspace/ui/components/input";
@@ -400,11 +400,13 @@ export default function VillaDetail() {
                           </Button>
                         </PopoverTrigger>
                         <PopoverContent className="w-auto p-0">
-                          <Calendar
+                          {/*<Calendar
                             mode="single"
                             selected={checkIn}
                             onSelect={setCheckIn}
                           />
+
+                          */}{" "}
                         </PopoverContent>
                       </Popover>
                       <Popover>
@@ -418,11 +420,13 @@ export default function VillaDetail() {
                           </Button>
                         </PopoverTrigger>
                         <PopoverContent className="w-auto p-0">
-                          <Calendar
+                          {/*<Calendar
                             mode="single"
-                            selected={checkOut}
-                            onSelect={setCheckOut}
+                            selected={checkIn}
+                            onSelect={setCheckIn}
                           />
+
+                          */}{" "}
                         </PopoverContent>
                       </Popover>
                     </div>
