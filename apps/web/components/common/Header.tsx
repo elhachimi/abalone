@@ -2,22 +2,23 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@workspace/ui/components/button";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 const navLinks = [
   { name: "Home", page: "Home" },
-  { name: "Villas", page: "Villas" },
+  { name: "Villas", page: "/villas" },
   { name: "For Sale", page: "Villas?type=sale" },
   { name: "For Rent", page: "Villas?type=rent" },
-  { name: "Contact", page: "Contact" },
+  { name: "Contact", page: "/contact" },
 ];
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const isHomePage = true;
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,7 +40,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href={""} className={`text-2xl font-semibold ${textColor}`}>
+          <Link href={"/"} className={`text-2xl font-semibold ${textColor}`}>
             Lombok <span className="text-[#C17E61]">Pearl</span>
           </Link>
 
@@ -48,7 +49,7 @@ export default function Header() {
             {navLinks.map((link) => (
               <Link
                 key={link.name}
-                href={""}
+                href={link.page}
                 className={`${textColor} hover:text-[#C17E61] transition-colors font-medium`}
               >
                 {link.name}
