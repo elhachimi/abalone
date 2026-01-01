@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "motion/react";
 import { Waves, Sun, Mountain, Compass } from "lucide-react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 const features = [
   {

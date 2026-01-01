@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Button } from "@workspace/ui/components/button";
 import { motion } from "motion/react";
 import { Mail, Phone, MapPin } from "lucide-react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 export default function ContactCTA() {
   return (

@@ -11,7 +11,7 @@ import {
   SelectValue,
 } from "@workspace/ui/components/select";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { motion } from "motion/react";
 import { toast } from "sonner";
 

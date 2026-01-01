@@ -6,7 +6,7 @@ import { Badge } from "@workspace/ui/components/badge";
 import { Textarea } from "@workspace/ui/components/textarea";
 import { Button } from "@workspace/ui/components/button";
 import { Input } from "@workspace/ui/components/input";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import {
   Popover,
   PopoverContent,

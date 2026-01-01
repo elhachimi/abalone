@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { Suspense } from "react";
 import { Button } from "@workspace/ui/components/button";
 import { Input } from "@workspace/ui/components/input";
 import {
@@ -11,18 +10,9 @@ import {
   SelectValue,
 } from "@workspace/ui/components/select";
 import { Slider } from "@workspace/ui/components/slider";
-import {
-  Search,
-  SlidersHorizontal,
-  X,
-  Bed,
-  Bath,
-  Grid3X3,
-  List,
-} from "lucide-react";
+import { Search, SlidersHorizontal, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import VillaCard from "@/components/common/VillaCard";
-import { useSearchParams } from "next/navigation";
 
 type Villa = {
   id: string;
@@ -95,9 +85,8 @@ const villas: Villa[] = [
     max_guests: 8,
   },
 ];
-async function Villas() {
-  const urlParams = useSearchParams();
-  const initialType = urlParams.get("type") || "all";
+export default function Villas() {
+  const initialType = "all";
 
   const [listingType, setListingType] = useState(initialType);
   const [searchQuery, setSearchQuery] = useState("");
@@ -332,12 +321,5 @@ async function Villas() {
         </div>
       </section>
     </div>
-  );
-}
-export default function VillasWithSuspense() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Villas />
-    </Suspense>
   );
 }
