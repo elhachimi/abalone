@@ -95,7 +95,7 @@ const villas: Villa[] = [
     max_guests: 8,
   },
 ];
-function Villas() {
+async function Villas() {
   const urlParams = useSearchParams();
   const initialType = urlParams.get("type") || "all";
 
