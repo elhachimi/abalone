@@ -9,29 +9,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@workspace/ui/components/select";
+import { Villa } from "@workspace/database/";
 import { Slider } from "@workspace/ui/components/slider";
 import { Search, SlidersHorizontal, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import VillaCard from "@/components/common/VillaCard";
 
-type Villa = {
-  id: string;
-  images: string[];
-  title: string;
-  is_featured: boolean;
-  bathrooms: number;
-  location: string;
-  short_description: string;
-  description: string;
-  bedrooms: number;
-  listing_type: "rent" | "sale" | "both";
-  price_rent: number;
-  price_sale: number;
-  max_guests: number;
-};
 const villas: Villa[] = [
   {
-    id: "1",
+    id: 1,
     images: [
       "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1200",
     ],
@@ -49,7 +35,7 @@ const villas: Villa[] = [
     max_guests: 6,
   },
   {
-    id: "2",
+    id: 2,
     images: [
       "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200",
     ],
@@ -67,7 +53,7 @@ const villas: Villa[] = [
     max_guests: 4,
   },
   {
-    id: "3",
+    id: 3,
     images: [
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200",
     ],

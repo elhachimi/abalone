@@ -16,6 +16,17 @@ datasource db {
 }
 
 model Villa {
-  id    Int    @id @default(autoincrement())
-  title String
+  id                Int      @id @default(autoincrement())
+  images            String[] // Array of image URLs
+  title             String
+  is_featured       Boolean
+  bathrooms         Int
+  location          String
+  short_description String
+  description       String
+  bedrooms          Int
+  listing_type      String
+  price_rent        Int
+  price_sale        Int
+  max_guests        Int
 }

@@ -1,30 +1,15 @@
 "use client";
 import Link from "next/link";
 import { Badge } from "@workspace/ui/components/badge";
+import { Villa } from "@workspace/database/";
 import { Bed, Bath, Users, MapPin } from "lucide-react";
 
 import { motion } from "motion/react";
 import Image from "next/legacy/image";
 
-type Villa = {
-  id: string;
-  images: string[];
-  title: string;
-  is_featured: boolean;
-  bathrooms: number;
-  location: string;
-  short_description: string;
-  description: string;
-  bedrooms: number;
-  listing_type: "rent" | "sale" | "both";
-  price_rent: number;
-  price_sale: number;
-  max_guests: number;
-};
-
 export default function VillaCard({
   villa = {
-    id: "",
+    id: 0,
     images: [],
     title: "",
     is_featured: true,
