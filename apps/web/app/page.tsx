@@ -1,3 +1,4 @@
+"use client";
 import About from "@/components/home/About";
 import ContactCTA from "@/components/home/ContactCTA";
 import FeaturedVillas from "@/components/home/FeaturedVillas";
