@@ -39,7 +39,6 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { format } from "date-fns";
-import { toast } from "sonner";
 
 const amenityIcons: Record<string, React.ElementType> = {
   WiFi: Wifi,
@@ -55,7 +54,7 @@ const amenityIcons: Record<string, React.ElementType> = {
 export default function VillaDetail() {
   const params = useParams();
   const id = params.id ? params.id.toString() : "";
-  const { villa, isLoading, isError } = useVilla(id);
+  const { villa, isLoading } = useVilla(id);
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [checkIn, setCheckIn] = useState<Date>();
@@ -183,7 +182,7 @@ export default function VillaDetail() {
         {/* Thumbnail Strip */}
         {images.length > 1 && (
           <div className="absolute bottom-16 left-1/2 -translate-x-1/2 flex gap-2">
-            {images.slice(0, 5).map((img, i) => (
+            {images.slice(0, 5).map((img: string, i: number) => (
               <button
                 key={i}
                 onClick={() => setCurrentImageIndex(i)}
@@ -285,7 +284,7 @@ export default function VillaDetail() {
                   Amenities
                 </h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  {villa.amenities.map((amenity, i) => {
+                  {villa.amenities.map((amenity: string, i: number) => {
                     const Icon = amenityIcons[amenity] || Check;
                     return (
                       <div key={i} className="flex items-center gap-3">
@@ -307,7 +306,7 @@ export default function VillaDetail() {
                   Features
                 </h2>
                 <ul className="space-y-2">
-                  {villa.features.map((feature, i) => (
+                  {villa.features.map((feature: string, i: number) => (
                     <li
                       key={i}
                       className="flex items-center gap-3 text-gray-600"
