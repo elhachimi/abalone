@@ -3,23 +3,8 @@ import Link from "next/link";
 import { Button } from "@workspace/ui/components/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
+import { Villa } from "@workspace/database/";
 import VillaCard from "@/components/common/VillaCard";
-
-type Villa = {
-  id: string;
-  images: string[];
-  title: string;
-  is_featured: boolean;
-  bathrooms: number;
-  location: string;
-  short_description: string;
-  description: string;
-  bedrooms: number;
-  listing_type: "rent" | "sale" | "both";
-  price_rent: number;
-  price_sale: number;
-  max_guests: number;
-};
 
 export default function FeaturedVillas({ villas }: { villas: Villa[] }) {
   const featuredVillas =
