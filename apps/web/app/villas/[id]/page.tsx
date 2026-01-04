@@ -54,8 +54,7 @@ const amenityIcons: Record<string, React.ElementType> = {
 
 export default function VillaDetail() {
   const params = useParams();
-  const id = params.id ?? "";
-  console.log("Villa ID:", id);
+  const id = params.id ? params.id.toString() : "";
   const { villa, isLoading, isError } = useVilla(id);
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
