@@ -519,18 +519,18 @@ export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof
 
 export const VillaScalarFieldEnum = {
   id: 'id',
-  images: 'images',
   title: 'title',
-  is_featured: 'is_featured',
   bathrooms: 'bathrooms',
-  location: 'location',
-  short_description: 'short_description',
-  description: 'description',
   bedrooms: 'bedrooms',
+  description: 'description',
+  images: 'images',
+  is_featured: 'is_featured',
   listing_type: 'listing_type',
+  location: 'location',
+  max_guests: 'max_guests',
   price_rent: 'price_rent',
   price_sale: 'price_sale',
-  max_guests: 'max_guests'
+  short_description: 'short_description'
 } as const
 
 export type VillaScalarFieldEnum = (typeof VillaScalarFieldEnum)[keyof typeof VillaScalarFieldEnum]
@@ -573,16 +573,16 @@ export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel,
 
 
 /**
- * Reference to a field of type 'String[]'
+ * Reference to a field of type 'String'
  */
-export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>
+export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
     
 
 
 /**
- * Reference to a field of type 'String'
+ * Reference to a field of type 'String[]'
  */
-export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
+export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>
     
 
 

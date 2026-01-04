@@ -39,7 +39,7 @@ export default function VillaCard({
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
     >
-      <Link href={""} className="group block">
+      <Link href={`/villas/${villa.id}`} className="group block">
         <div className="relative overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-500">
           {/* Image Container */}
           <div className="relative h-72 overflow-hidden">

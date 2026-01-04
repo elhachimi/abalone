@@ -7,6 +7,8 @@ import { Textarea } from "@workspace/ui/components/textarea";
 import { Button } from "@workspace/ui/components/button";
 import { Input } from "@workspace/ui/components/input";
 import Image from "next/legacy/image";
+import { useParams } from "next/navigation";
+import { useVilla } from "@/hooks/useVilla";
 import {
   Popover,
   PopoverContent,
@@ -50,50 +52,11 @@ const amenityIcons: Record<string, React.ElementType> = {
   Cleaning: Sparkles,
 };
 
-type Villa = {
-  id: string;
-  images: string[];
-  title: string;
-  is_featured: boolean;
-  bathrooms: number;
-  location: string;
-  short_description: string;
-  description: string;
-  bedrooms: number;
-  listing_type: "rent" | "sale" | "both";
-  price_rent: number;
-  price_sale: number;
-  max_guests: number;
-  features: string[];
-  amenities: string[];
-  building_size: number;
-  status: string;
-};
-const villa: Villa = {
-  id: "1",
-  images: [
-    "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1200",
-  ],
-  title: "Seaside Retreat",
-  is_featured: true,
-  bathrooms: 2,
-  location: "Santorini, Greece",
-  short_description: "A beautiful villa overlooking the sea.",
-  description:
-    "Enjoy breathtaking sunsets and luxurious amenities in this seaside villa.",
-  bedrooms: 3,
-  listing_type: "rent",
-  price_rent: 350,
-  price_sale: 0,
-  max_guests: 6,
-  features: [],
-  amenities: ["Wifi"],
-  building_size: 250,
-  status: "available",
-};
 export default function VillaDetail() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const villaId = urlParams.get("id");
+  const params = useParams();
+  const id = params.id ?? "";
+  console.log("Villa ID:", id);
+  const { villa, isLoading, isError } = useVilla(id);
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [checkIn, setCheckIn] = useState<Date>();
@@ -114,7 +77,6 @@ export default function VillaDetail() {
   //  enabled: !!villaId,
   //});
 
-  const isLoading = false;
   //const createInquiry = useMutation({
   //  mutationFn: (data) => base44.entities.Inquiry.create(data),
   //  onSuccess: () => {

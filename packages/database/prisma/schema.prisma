@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider     = "prisma-client"
   output       = "../generated/client"
@@ -17,16 +11,16 @@ datasource db {
 
 model Villa {
   id                Int      @id @default(autoincrement())
-  images            String[] // Array of image URLs
   title             String
-  is_featured       Boolean
   bathrooms         Int
-  location          String
-  short_description String
-  description       String
   bedrooms          Int
+  description       String
+  images            String[]
+  is_featured       Boolean
   listing_type      String
+  location          String
+  max_guests        Int
   price_rent        Int
   price_sale        Int
-  max_guests        Int
+  short_description String
 }

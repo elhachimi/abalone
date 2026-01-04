@@ -30,64 +30,64 @@ export type VillaAvgAggregateOutputType = {
   id: number | null
   bathrooms: number | null
   bedrooms: number | null
+  max_guests: number | null
   price_rent: number | null
   price_sale: number | null
-  max_guests: number | null
 }
 
 export type VillaSumAggregateOutputType = {
   id: number | null
   bathrooms: number | null
   bedrooms: number | null
+  max_guests: number | null
   price_rent: number | null
   price_sale: number | null
-  max_guests: number | null
 }
 
 export type VillaMinAggregateOutputType = {
   id: number | null
   title: string | null
-  is_featured: boolean | null
   bathrooms: number | null
-  location: string | null
-  short_description: string | null
-  description: string | null
   bedrooms: number | null
+  description: string | null
+  is_featured: boolean | null
   listing_type: string | null
+  location: string | null
+  max_guests: number | null
   price_rent: number | null
   price_sale: number | null
-  max_guests: number | null
+  short_description: string | null
 }
 
 export type VillaMaxAggregateOutputType = {
   id: number | null
   title: string | null
-  is_featured: boolean | null
   bathrooms: number | null
-  location: string | null
-  short_description: string | null
-  description: string | null
   bedrooms: number | null
+  description: string | null
+  is_featured: boolean | null
   listing_type: string | null
+  location: string | null
+  max_guests: number | null
   price_rent: number | null
   price_sale: number | null
-  max_guests: number | null
+  short_description: string | null
 }
 
 export type VillaCountAggregateOutputType = {
   id: number
-  images: number
   title: number
-  is_featured: number
   bathrooms: number
-  location: number
-  short_description: number
-  description: number
   bedrooms: number
+  description: number
+  images: number
+  is_featured: number
   listing_type: number
+  location: number
+  max_guests: number
   price_rent: number
   price_sale: number
-  max_guests: number
+  short_description: number
   _all: number
 }
 
@@ -96,64 +96,64 @@ export type VillaAvgAggregateInputType = {
   id?: true
   bathrooms?: true
   bedrooms?: true
+  max_guests?: true
   price_rent?: true
   price_sale?: true
-  max_guests?: true
 }
 
 export type VillaSumAggregateInputType = {
   id?: true
   bathrooms?: true
   bedrooms?: true
+  max_guests?: true
   price_rent?: true
   price_sale?: true
-  max_guests?: true
 }
 
 export type VillaMinAggregateInputType = {
   id?: true
   title?: true
-  is_featured?: true
   bathrooms?: true
-  location?: true
-  short_description?: true
-  description?: true
   bedrooms?: true
+  description?: true
+  is_featured?: true
   listing_type?: true
+  location?: true
+  max_guests?: true
   price_rent?: true
   price_sale?: true
-  max_guests?: true
+  short_description?: true
 }
 
 export type VillaMaxAggregateInputType = {
   id?: true
   title?: true
-  is_featured?: true
   bathrooms?: true
-  location?: true
-  short_description?: true
-  description?: true
   bedrooms?: true
+  description?: true
+  is_featured?: true
   listing_type?: true
+  location?: true
+  max_guests?: true
   price_rent?: true
   price_sale?: true
-  max_guests?: true
+  short_description?: true
 }
 
 export type VillaCountAggregateInputType = {
   id?: true
-  images?: true
   title?: true
-  is_featured?: true
   bathrooms?: true
-  location?: true
-  short_description?: true
-  description?: true
   bedrooms?: true
+  description?: true
+  images?: true
+  is_featured?: true
   listing_type?: true
+  location?: true
+  max_guests?: true
   price_rent?: true
   price_sale?: true
-  max_guests?: true
+  short_description?: true
   _all?: true
 }
 
@@ -245,18 +245,18 @@ export type VillaGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
 
 export type VillaGroupByOutputType = {
   id: number
-  images: string[]
   title: string
-  is_featured: boolean
   bathrooms: number
-  location: string
-  short_description: string
-  description: string
   bedrooms: number
+  description: string
+  images: string[]
+  is_featured: boolean
   listing_type: string
+  location: string
+  max_guests: number
   price_rent: number
   price_sale: number
-  max_guests: number
+  short_description: string
   _count: VillaCountAggregateOutputType | null
   _avg: VillaAvgAggregateOutputType | null
   _sum: VillaSumAggregateOutputType | null
@@ -284,34 +284,34 @@ export type VillaWhereInput = {
   OR?: Prisma.VillaWhereInput[]
   NOT?: Prisma.VillaWhereInput | Prisma.VillaWhereInput[]
   id?: Prisma.IntFilter<"Villa"> | number
-  images?: Prisma.StringNullableListFilter<"Villa">
   title?: Prisma.StringFilter<"Villa"> | string
-  is_featured?: Prisma.BoolFilter<"Villa"> | boolean
   bathrooms?: Prisma.IntFilter<"Villa"> | number
-  location?: Prisma.StringFilter<"Villa"> | string
-  short_description?: Prisma.StringFilter<"Villa"> | string
-  description?: Prisma.StringFilter<"Villa"> | string
   bedrooms?: Prisma.IntFilter<"Villa"> | number
+  description?: Prisma.StringFilter<"Villa"> | string
+  images?: Prisma.StringNullableListFilter<"Villa">
+  is_featured?: Prisma.BoolFilter<"Villa"> | boolean
   listing_type?: Prisma.StringFilter<"Villa"> | string
+  location?: Prisma.StringFilter<"Villa"> | string
+  max_guests?: Prisma.IntFilter<"Villa"> | number
   price_rent?: Prisma.IntFilter<"Villa"> | number
   price_sale?: Prisma.IntFilter<"Villa"> | number
-  max_guests?: Prisma.IntFilter<"Villa"> | number
+  short_description?: Prisma.StringFilter<"Villa"> | string
 }
 
 export type VillaOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  images?: Prisma.SortOrder
   title?: Prisma.SortOrder
-  is_featured?: Prisma.SortOrder
   bathrooms?: Prisma.SortOrder
-  location?: Prisma.SortOrder
-  short_description?: Prisma.SortOrder
-  description?: Prisma.SortOrder
   bedrooms?: Prisma.SortOrder
+  description?: Prisma.SortOrder
+  images?: Prisma.SortOrder
+  is_featured?: Prisma.SortOrder
   listing_type?: Prisma.SortOrder
+  location?: Prisma.SortOrder
+  max_guests?: Prisma.SortOrder
   price_rent?: Prisma.SortOrder
   price_sale?: Prisma.SortOrder
-  max_guests?: Prisma.SortOrder
+  short_description?: Prisma.SortOrder
 }
 
 export type VillaWhereUniqueInput = Prisma.AtLeast<{
@@ -319,34 +319,34 @@ export type VillaWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.VillaWhereInput | Prisma.VillaWhereInput[]
   OR?: Prisma.VillaWhereInput[]
   NOT?: Prisma.VillaWhereInput | Prisma.VillaWhereInput[]
-  images?: Prisma.StringNullableListFilter<"Villa">
   title?: Prisma.StringFilter<"Villa"> | string
-  is_featured?: Prisma.BoolFilter<"Villa"> | boolean
   bathrooms?: Prisma.IntFilter<"Villa"> | number
-  location?: Prisma.StringFilter<"Villa"> | string
-  short_description?: Prisma.StringFilter<"Villa"> | string
-  description?: Prisma.StringFilter<"Villa"> | string
   bedrooms?: Prisma.IntFilter<"Villa"> | number
+  description?: Prisma.StringFilter<"Villa"> | string
+  images?: Prisma.StringNullableListFilter<"Villa">
+  is_featured?: Prisma.BoolFilter<"Villa"> | boolean
   listing_type?: Prisma.StringFilter<"Villa"> | string
+  location?: Prisma.StringFilter<"Villa"> | string
+  max_guests?: Prisma.IntFilter<"Villa"> | number
   price_rent?: Prisma.IntFilter<"Villa"> | number
   price_sale?: Prisma.IntFilter<"Villa"> | number
-  max_guests?: Prisma.IntFilter<"Villa"> | number
+  short_description?: Prisma.StringFilter<"Villa"> | string
 }, "id">
 
 export type VillaOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  images?: Prisma.SortOrder
   title?: Prisma.SortOrder
-  is_featured?: Prisma.SortOrder
   bathrooms?: Prisma.SortOrder
-  location?: Prisma.SortOrder
-  short_description?: Prisma.SortOrder
-  description?: Prisma.SortOrder
   bedrooms?: Prisma.SortOrder
+  description?: Prisma.SortOrder
+  images?: Prisma.SortOrder
+  is_featured?: Prisma.SortOrder
   listing_type?: Prisma.SortOrder
+  location?: Prisma.SortOrder
+  max_guests?: Prisma.SortOrder
   price_rent?: Prisma.SortOrder
   price_sale?: Prisma.SortOrder
-  max_guests?: Prisma.SortOrder
+  short_description?: Prisma.SortOrder
   _count?: Prisma.VillaCountOrderByAggregateInput
   _avg?: Prisma.VillaAvgOrderByAggregateInput
   _max?: Prisma.VillaMaxOrderByAggregateInput
@@ -359,127 +359,127 @@ export type VillaScalarWhereWithAggregatesInput = {
   OR?: Prisma.VillaScalarWhereWithAggregatesInput[]
   NOT?: Prisma.VillaScalarWhereWithAggregatesInput | Prisma.VillaScalarWhereWithAggregatesInput[]
   id?: Prisma.IntWithAggregatesFilter<"Villa"> | number
-  images?: Prisma.StringNullableListFilter<"Villa">
   title?: Prisma.StringWithAggregatesFilter<"Villa"> | string
-  is_featured?: Prisma.BoolWithAggregatesFilter<"Villa"> | boolean
   bathrooms?: Prisma.IntWithAggregatesFilter<"Villa"> | number
-  location?: Prisma.StringWithAggregatesFilter<"Villa"> | string
-  short_description?: Prisma.StringWithAggregatesFilter<"Villa"> | string
-  description?: Prisma.StringWithAggregatesFilter<"Villa"> | string
   bedrooms?: Prisma.IntWithAggregatesFilter<"Villa"> | number
+  description?: Prisma.StringWithAggregatesFilter<"Villa"> | string
+  images?: Prisma.StringNullableListFilter<"Villa">
+  is_featured?: Prisma.BoolWithAggregatesFilter<"Villa"> | boolean
   listing_type?: Prisma.StringWithAggregatesFilter<"Villa"> | string
+  location?: Prisma.StringWithAggregatesFilter<"Villa"> | string
+  max_guests?: Prisma.IntWithAggregatesFilter<"Villa"> | number
   price_rent?: Prisma.IntWithAggregatesFilter<"Villa"> | number
   price_sale?: Prisma.IntWithAggregatesFilter<"Villa"> | number
-  max_guests?: Prisma.IntWithAggregatesFilter<"Villa"> | number
+  short_description?: Prisma.StringWithAggregatesFilter<"Villa"> | string
 }
 
 export type VillaCreateInput = {
-  images?: Prisma.VillaCreateimagesInput | string[]
   title: string
-  is_featured: boolean
   bathrooms: number
-  location: string
-  short_description: string
-  description: string
   bedrooms: number
+  description: string
+  images?: Prisma.VillaCreateimagesInput | string[]
+  is_featured: boolean
   listing_type: string
+  location: string
+  max_guests: number
   price_rent: number
   price_sale: number
-  max_guests: number
+  short_description: string
 }
 
 export type VillaUncheckedCreateInput = {
   id?: number
-  images?: Prisma.VillaCreateimagesInput | string[]
   title: string
-  is_featured: boolean
   bathrooms: number
-  location: string
-  short_description: string
-  description: string
   bedrooms: number
+  description: string
+  images?: Prisma.VillaCreateimagesInput | string[]
+  is_featured: boolean
   listing_type: string
+  location: string
+  max_guests: number
   price_rent: number
   price_sale: number
-  max_guests: number
+  short_description: string
 }
 
 export type VillaUpdateInput = {
-  images?: Prisma.VillaUpdateimagesInput | string[]
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  is_featured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   bathrooms?: Prisma.IntFieldUpdateOperationsInput | number
-  location?: Prisma.StringFieldUpdateOperationsInput | string
-  short_description?: Prisma.StringFieldUpdateOperationsInput | string
-  description?: Prisma.StringFieldUpdateOperationsInput | string
   bedrooms?: Prisma.IntFieldUpdateOperationsInput | number
+  description?: Prisma.StringFieldUpdateOperationsInput | string
+  images?: Prisma.VillaUpdateimagesInput | string[]
+  is_featured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   listing_type?: Prisma.StringFieldUpdateOperationsInput | string
+  location?: Prisma.StringFieldUpdateOperationsInput | string
+  max_guests?: Prisma.IntFieldUpdateOperationsInput | number
   price_rent?: Prisma.IntFieldUpdateOperationsInput | number
   price_sale?: Prisma.IntFieldUpdateOperationsInput | number
-  max_guests?: Prisma.IntFieldUpdateOperationsInput | number
+  short_description?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type VillaUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  images?: Prisma.VillaUpdateimagesInput | string[]
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  is_featured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   bathrooms?: Prisma.IntFieldUpdateOperationsInput | number
-  location?: Prisma.StringFieldUpdateOperationsInput | string
-  short_description?: Prisma.StringFieldUpdateOperationsInput | string
-  description?: Prisma.StringFieldUpdateOperationsInput | string
   bedrooms?: Prisma.IntFieldUpdateOperationsInput | number
+  description?: Prisma.StringFieldUpdateOperationsInput | string
+  images?: Prisma.VillaUpdateimagesInput | string[]
+  is_featured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   listing_type?: Prisma.StringFieldUpdateOperationsInput | string
+  location?: Prisma.StringFieldUpdateOperationsInput | string
+  max_guests?: Prisma.IntFieldUpdateOperationsInput | number
   price_rent?: Prisma.IntFieldUpdateOperationsInput | number
   price_sale?: Prisma.IntFieldUpdateOperationsInput | number
-  max_guests?: Prisma.IntFieldUpdateOperationsInput | number
+  short_description?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type VillaCreateManyInput = {
   id?: number
-  images?: Prisma.VillaCreateimagesInput | string[]
   title: string
-  is_featured: boolean
   bathrooms: number
-  location: string
-  short_description: string
-  description: string
   bedrooms: number
+  description: string
+  images?: Prisma.VillaCreateimagesInput | string[]
+  is_featured: boolean
   listing_type: string
+  location: string
+  max_guests: number
   price_rent: number
   price_sale: number
-  max_guests: number
+  short_description: string
 }
 
 export type VillaUpdateManyMutationInput = {
-  images?: Prisma.VillaUpdateimagesInput | string[]
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  is_featured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   bathrooms?: Prisma.IntFieldUpdateOperationsInput | number
-  location?: Prisma.StringFieldUpdateOperationsInput | string
-  short_description?: Prisma.StringFieldUpdateOperationsInput | string
-  description?: Prisma.StringFieldUpdateOperationsInput | string
   bedrooms?: Prisma.IntFieldUpdateOperationsInput | number
+  description?: Prisma.StringFieldUpdateOperationsInput | string
+  images?: Prisma.VillaUpdateimagesInput | string[]
+  is_featured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   listing_type?: Prisma.StringFieldUpdateOperationsInput | string
+  location?: Prisma.StringFieldUpdateOperationsInput | string
+  max_guests?: Prisma.IntFieldUpdateOperationsInput | number
   price_rent?: Prisma.IntFieldUpdateOperationsInput | number
   price_sale?: Prisma.IntFieldUpdateOperationsInput | number
-  max_guests?: Prisma.IntFieldUpdateOperationsInput | number
+  short_description?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type VillaUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  images?: Prisma.VillaUpdateimagesInput | string[]
   title?: Prisma.StringFieldUpdateOperationsInput | string
-  is_featured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   bathrooms?: Prisma.IntFieldUpdateOperationsInput | number
-  location?: Prisma.StringFieldUpdateOperationsInput | string
-  short_description?: Prisma.StringFieldUpdateOperationsInput | string
-  description?: Prisma.StringFieldUpdateOperationsInput | string
   bedrooms?: Prisma.IntFieldUpdateOperationsInput | number
+  description?: Prisma.StringFieldUpdateOperationsInput | string
+  images?: Prisma.VillaUpdateimagesInput | string[]
+  is_featured?: Prisma.BoolFieldUpdateOperationsInput | boolean
   listing_type?: Prisma.StringFieldUpdateOperationsInput | string
+  location?: Prisma.StringFieldUpdateOperationsInput | string
+  max_guests?: Prisma.IntFieldUpdateOperationsInput | number
   price_rent?: Prisma.IntFieldUpdateOperationsInput | number
   price_sale?: Prisma.IntFieldUpdateOperationsInput | number
-  max_guests?: Prisma.IntFieldUpdateOperationsInput | number
+  short_description?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type StringNullableListFilter<$PrismaModel = never> = {
@@ -492,83 +492,74 @@ export type StringNullableListFilter<$PrismaModel = never> = {
 
 export type VillaCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  images?: Prisma.SortOrder
   title?: Prisma.SortOrder
-  is_featured?: Prisma.SortOrder
   bathrooms?: Prisma.SortOrder
-  location?: Prisma.SortOrder
-  short_description?: Prisma.SortOrder
-  description?: Prisma.SortOrder
   bedrooms?: Prisma.SortOrder
+  description?: Prisma.SortOrder
+  images?: Prisma.SortOrder
+  is_featured?: Prisma.SortOrder
   listing_type?: Prisma.SortOrder
+  location?: Prisma.SortOrder
+  max_guests?: Prisma.SortOrder
   price_rent?: Prisma.SortOrder
   price_sale?: Prisma.SortOrder
-  max_guests?: Prisma.SortOrder
+  short_description?: Prisma.SortOrder
 }
 
 export type VillaAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
   bathrooms?: Prisma.SortOrder
   bedrooms?: Prisma.SortOrder
+  max_guests?: Prisma.SortOrder
   price_rent?: Prisma.SortOrder
   price_sale?: Prisma.SortOrder
-  max_guests?: Prisma.SortOrder
 }
 
 export type VillaMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
-  is_featured?: Prisma.SortOrder
   bathrooms?: Prisma.SortOrder
-  location?: Prisma.SortOrder
-  short_description?: Prisma.SortOrder
-  description?: Prisma.SortOrder
   bedrooms?: Prisma.SortOrder
+  description?: Prisma.SortOrder
+  is_featured?: Prisma.SortOrder
   listing_type?: Prisma.SortOrder
+  location?: Prisma.SortOrder
+  max_guests?: Prisma.SortOrder
   price_rent?: Prisma.SortOrder
   price_sale?: Prisma.SortOrder
-  max_guests?: Prisma.SortOrder
+  short_description?: Prisma.SortOrder
 }
 
 export type VillaMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
-  is_featured?: Prisma.SortOrder
   bathrooms?: Prisma.SortOrder
-  location?: Prisma.SortOrder
-  short_description?: Prisma.SortOrder
-  description?: Prisma.SortOrder
   bedrooms?: Prisma.SortOrder
+  description?: Prisma.SortOrder
+  is_featured?: Prisma.SortOrder
   listing_type?: Prisma.SortOrder
+  location?: Prisma.SortOrder
+  max_guests?: Prisma.SortOrder
   price_rent?: Prisma.SortOrder
   price_sale?: Prisma.SortOrder
-  max_guests?: Prisma.SortOrder
+  short_description?: Prisma.SortOrder
 }
 
 export type VillaSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
   bathrooms?: Prisma.SortOrder
   bedrooms?: Prisma.SortOrder
+  max_guests?: Prisma.SortOrder
   price_rent?: Prisma.SortOrder
   price_sale?: Prisma.SortOrder
-  max_guests?: Prisma.SortOrder
 }
 
 export type VillaCreateimagesInput = {
   set: string[]
 }
 
-export type VillaUpdateimagesInput = {
-  set?: string[]
-  push?: string | string[]
-}
-
 export type StringFieldUpdateOperationsInput = {
   set?: string
-}
-
-export type BoolFieldUpdateOperationsInput = {
-  set?: boolean
 }
 
 export type IntFieldUpdateOperationsInput = {
@@ -579,91 +570,100 @@ export type IntFieldUpdateOperationsInput = {
   divide?: number
 }
 
+export type VillaUpdateimagesInput = {
+  set?: string[]
+  push?: string | string[]
+}
+
+export type BoolFieldUpdateOperationsInput = {
+  set?: boolean
+}
+
 
 
 export type VillaSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  images?: boolean
   title?: boolean
-  is_featured?: boolean
   bathrooms?: boolean
-  location?: boolean
-  short_description?: boolean
-  description?: boolean
   bedrooms?: boolean
+  description?: boolean
+  images?: boolean
+  is_featured?: boolean
   listing_type?: boolean
+  location?: boolean
+  max_guests?: boolean
   price_rent?: boolean
   price_sale?: boolean
-  max_guests?: boolean
+  short_description?: boolean
 }, ExtArgs["result"]["villa"]>
 
 export type VillaSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  images?: boolean
   title?: boolean
-  is_featured?: boolean
   bathrooms?: boolean
-  location?: boolean
-  short_description?: boolean
-  description?: boolean
   bedrooms?: boolean
+  description?: boolean
+  images?: boolean
+  is_featured?: boolean
   listing_type?: boolean
+  location?: boolean
+  max_guests?: boolean
   price_rent?: boolean
   price_sale?: boolean
-  max_guests?: boolean
+  short_description?: boolean
 }, ExtArgs["result"]["villa"]>
 
 export type VillaSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  images?: boolean
   title?: boolean
-  is_featured?: boolean
   bathrooms?: boolean
-  location?: boolean
-  short_description?: boolean
-  description?: boolean
   bedrooms?: boolean
+  description?: boolean
+  images?: boolean
+  is_featured?: boolean
   listing_type?: boolean
+  location?: boolean
+  max_guests?: boolean
   price_rent?: boolean
   price_sale?: boolean
-  max_guests?: boolean
+  short_description?: boolean
 }, ExtArgs["result"]["villa"]>
 
 export type VillaSelectScalar = {
   id?: boolean
-  images?: boolean
   title?: boolean
-  is_featured?: boolean
   bathrooms?: boolean
-  location?: boolean
-  short_description?: boolean
-  description?: boolean
   bedrooms?: boolean
+  description?: boolean
+  images?: boolean
+  is_featured?: boolean
   listing_type?: boolean
+  location?: boolean
+  max_guests?: boolean
   price_rent?: boolean
   price_sale?: boolean
-  max_guests?: boolean
+  short_description?: boolean
 }
 
-export type VillaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "images" | "title" | "is_featured" | "bathrooms" | "location" | "short_description" | "description" | "bedrooms" | "listing_type" | "price_rent" | "price_sale" | "max_guests", ExtArgs["result"]["villa"]>
+export type VillaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "bathrooms" | "bedrooms" | "description" | "images" | "is_featured" | "listing_type" | "location" | "max_guests" | "price_rent" | "price_sale" | "short_description", ExtArgs["result"]["villa"]>
 
 export type $VillaPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Villa"
   objects: {}
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
-    images: string[]
     title: string
-    is_featured: boolean
     bathrooms: number
-    location: string
-    short_description: string
-    description: string
     bedrooms: number
+    description: string
+    images: string[]
+    is_featured: boolean
     listing_type: string
+    location: string
+    max_guests: number
     price_rent: number
     price_sale: number
-    max_guests: number
+    short_description: string
   }, ExtArgs["result"]["villa"]>
   composites: {}
 }
@@ -1088,18 +1088,18 @@ export interface Prisma__VillaClient<T, Null = never, ExtArgs extends runtime.Ty
  */
 export interface VillaFieldRefs {
   readonly id: Prisma.FieldRef<"Villa", 'Int'>
-  readonly images: Prisma.FieldRef<"Villa", 'String[]'>
   readonly title: Prisma.FieldRef<"Villa", 'String'>
-  readonly is_featured: Prisma.FieldRef<"Villa", 'Boolean'>
   readonly bathrooms: Prisma.FieldRef<"Villa", 'Int'>
-  readonly location: Prisma.FieldRef<"Villa", 'String'>
-  readonly short_description: Prisma.FieldRef<"Villa", 'String'>
-  readonly description: Prisma.FieldRef<"Villa", 'String'>
   readonly bedrooms: Prisma.FieldRef<"Villa", 'Int'>
+  readonly description: Prisma.FieldRef<"Villa", 'String'>
+  readonly images: Prisma.FieldRef<"Villa", 'String[]'>
+  readonly is_featured: Prisma.FieldRef<"Villa", 'Boolean'>
   readonly listing_type: Prisma.FieldRef<"Villa", 'String'>
+  readonly location: Prisma.FieldRef<"Villa", 'String'>
+  readonly max_guests: Prisma.FieldRef<"Villa", 'Int'>
   readonly price_rent: Prisma.FieldRef<"Villa", 'Int'>
   readonly price_sale: Prisma.FieldRef<"Villa", 'Int'>
-  readonly max_guests: Prisma.FieldRef<"Villa", 'Int'>
+  readonly short_description: Prisma.FieldRef<"Villa", 'String'>
 }
     
 

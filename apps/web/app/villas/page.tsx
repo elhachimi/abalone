@@ -14,65 +14,15 @@ import { Slider } from "@workspace/ui/components/slider";
 import { Search, SlidersHorizontal, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import VillaCard from "@/components/common/VillaCard";
+import useSWR from "swr";
 
-const villas: Villa[] = [
-  {
-    id: 1,
-    images: [
-      "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1200",
-    ],
-    title: "Seaside Retreat",
-    is_featured: true,
-    bathrooms: 2,
-    location: "Santorini, Greece",
-    short_description: "A beautiful villa overlooking the sea.",
-    description:
-      "Enjoy breathtaking sunsets and luxurious amenities in this seaside villa.",
-    bedrooms: 3,
-    listing_type: "rent",
-    price_rent: 350,
-    price_sale: 0,
-    max_guests: 6,
-  },
-  {
-    id: 2,
-    images: [
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200",
-    ],
-    title: "Mountain Escape",
-    is_featured: true,
-    bathrooms: 1,
-    location: "Aspen, Colorado",
-    short_description: "Cozy mountain villa for winter getaways.",
-    description:
-      "Perfect for ski lovers, this villa offers comfort and stunning mountain views.",
-    bedrooms: 2,
-    listing_type: "rent",
-    price_rent: 250,
-    price_sale: 0,
-    max_guests: 4,
-  },
-  {
-    id: 3,
-    images: [
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200",
-    ],
-    title: "Urban Luxury",
-    is_featured: true,
-    bathrooms: 3,
-    location: "Dubai, UAE",
-    short_description: "Modern villa in the heart of the city.",
-    description:
-      "Experience luxury living with top-notch facilities and city views.",
-    bedrooms: 4,
-    listing_type: "sale",
-    price_rent: 0,
-    price_sale: 1200000,
-    max_guests: 8,
-  },
-];
+const fetcher = (url: string) => fetch(url).then((r) => r.json());
+
 export default function Villas() {
   const initialType = "all";
+
+  const { data } = useSWR("/api/villas", fetcher);
+  const villas = data || [];
 
   const [listingType, setListingType] = useState(initialType);
   const [searchQuery, setSearchQuery] = useState("");
@@ -82,7 +32,7 @@ export default function Villas() {
 
   const isLoading = false;
   // Filter villas
-  const filteredVillas = villas.filter((villa) => {
+  const filteredVillas = villas.filter((villa: Villa) => {
     // Listing type filter
     if (
       listingType === "rent" &&
@@ -290,7 +240,7 @@ export default function Villas() {
             </div>
           ) : filteredVillas.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredVillas.map((villa, index) => (
+              {filteredVillas.map((villa: Villa, index: number) => (
                 <VillaCard key={villa.id} villa={villa} index={index} />
               ))}
             </div>
