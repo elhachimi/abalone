@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "build": "pnpm --filter database db:deploy && pnpm --filter database db:generate  && pnpm --filter web build",
-    "start": "pnpm --filter web start",
-    "dev": "pnpm --filter database db:generate && pnpm --filter web dev",
+    "start:web": "pnpm --filter web start",
+    "start:admin": "pnpm --filter admin start",
+    "dev:web": "pnpm --filter database db:generate && pnpm --filter web dev",
+    "dev:admin": "pnpm --filter database db:generate && pnpm --filter admin dev",
     "studio": "pnpm --filter database db:studio",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
@@ -22,4 +24,3 @@
     "node": ">=20"
   }
 }
-
